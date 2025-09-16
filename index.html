@@ -8,7 +8,7 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
 
-  <title>Maryam and Wahaj</title>
+  <title>Maryam ♥ Wahaj — Around the World</title>
 
   <!-- Fonts -->
 
@@ -20,6 +20,7 @@
 
   <!-- High-quality photo assets (Wikimedia Commons) -->
 
+  <link rel="preload" as="image" href="https://upload.wikimedia.org/wikipedia/commons/thumb/8/85/Clock_Tower_Faisalabad_by_Usman_Nadeem.jpg/1920px-Clock_Tower_Faisalabad_by_Usman_Nadeem.jpg" />
   <link rel="preload" as="image" href="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Ali_Mujtaba_WLM2017_FAISAL_MOSQUE_019.jpg/1920px-Ali_Mujtaba_WLM2017_FAISAL_MOSQUE_019.jpg" />
 
   <link rel="preload" as="image" href="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8d/TanahLot_2014.JPG/1920px-TanahLot_2014.JPG" />
@@ -164,29 +165,43 @@
 
   /* Per-scene themed title colors/placement */
 
-  .s1 .title { color: #e8ffe8; text-shadow: 0 2px 12px rgba(0,0,0,.6), 0 0 28px rgba(0,128,64,.25); }
+  .s1 .title { color: #ffe9c6; text-shadow: 0 2px 12px rgba(22,10,5,.7), 0 0 26px rgba(255,188,116,.35); left: 50%; transform: translateX(-50%); top: 8%; }
 
-  .s2 .title { color: #ffd27a; text-shadow: 0 2px 12px rgba(27,16,56,.7), 0 0 28px rgba(255,122,0,.35); left: 12%; transform: none; bottom: 12%; top: auto; }
+  .s2 .title { color: #e8ffe8; text-shadow: 0 2px 12px rgba(0,0,0,.6), 0 0 28px rgba(0,128,64,.25); }
 
-  .s3 .title { color: #f0d27a; text-shadow: 0 2px 12px rgba(0,0,0,.8), 0 0 26px rgba(240,210,122,.35); left: 8%; transform: none; top: 8%; }
+  .s3 .title { color: #ffd27a; text-shadow: 0 2px 12px rgba(27,16,56,.7), 0 0 28px rgba(255,122,0,.35); left: 12%; transform: none; bottom: 12%; top: auto; }
 
-  .s4 .title { color: #f3e4b3; text-shadow: 0 2px 12px rgba(26,12,44,.8), 0 0 24px rgba(212,175,55,.35); left: auto; right: 8%; transform: none; top: 8%; }
+  .s4 .title { color: #f0d27a; text-shadow: 0 2px 12px rgba(0,0,0,.8), 0 0 26px rgba(240,210,122,.35); left: 8%; transform: none; top: 8%; }
 
-  .s5 .title { color: #ffffff; text-shadow: 0 2px 12px rgba(0,0,0,.65), 0 0 24px rgba(208,0,0,.3); left: 50%; transform: translateX(-50%); top: 8%; }
+  .s5 .title { color: #f3e4b3; text-shadow: 0 2px 12px rgba(26,12,44,.8), 0 0 24px rgba(212,175,55,.35); left: auto; right: 8%; transform: none; top: 8%; }
 
-  .s6 .title { color: #a8c7ff; text-shadow: 0 2px 12px rgba(0,0,0,.7), 0 0 24px rgba(80,120,200,.35); left: 12%; transform: none; bottom: 14%; top: auto; }
+  .s6 .title { color: #ffffff; text-shadow: 0 2px 12px rgba(0,0,0,.65), 0 0 24px rgba(208,0,0,.3); left: 50%; transform: translateX(-50%); top: 8%; }
 
-  .s7 .title { color: #bdf7ff; text-shadow: 0 2px 12px rgba(0,0,0,.65), 0 0 24px rgba(0,180,200,.35); left: 50%; transform: translateX(-50%) rotate(-2deg); bottom: 12%; top: auto; }
+  .s7 .title { color: #a8c7ff; text-shadow: 0 2px 12px rgba(0,0,0,.7), 0 0 24px rgba(80,120,200,.35); left: 12%; transform: none; bottom: 14%; top: auto; }
 
-  .s8 .title { color: #ffef9e; text-shadow: 0 2px 12px rgba(0,0,0,.75), 0 0 24px rgba(220,180,60,.4); left: auto; right: 10%; transform: none; top: 10%; }
+  .s8 .title { color: #bdf7ff; text-shadow: 0 2px 12px rgba(0,0,0,.65), 0 0 24px rgba(0,180,200,.35); left: 50%; transform: translateX(-50%) rotate(-2deg); bottom: 12%; top: auto; }
 
-  .s9 { background-image:
+  .s9 .title { color: #ffef9e; text-shadow: 0 2px 12px rgba(0,0,0,.75), 0 0 24px rgba(220,180,60,.4); left: auto; right: 10%; transform: none; top: 10%; }
+  .s10 { background-image:
+  .subtitle { position: absolute; left: 50%; transform: translateX(-50%); top: calc(6vmin + clamp(40px,6vmin,72px)); margin: 0; font-family: 'Lora', Georgia, serif; font-size: clamp(16px, 2.1vmin, 20px); color: rgba(255,246,240,.85); text-shadow: 0 2px 12px rgba(0,0,0,.55); max-width: clamp(260px, 48vw, 560px); text-align: center; z-index: 6; pointer-events: none; }
+  .s3 .subtitle { left: 12%; transform: none; top: auto; bottom: 6%; text-align: left; max-width: 320px; }
+  .s4 .subtitle { left: 8%; transform: none; top: calc(8% + clamp(50px,6vmin,80px)); text-align: left; max-width: 340px; }
+  .s5 .subtitle { right: 8%; left: auto; transform: none; top: calc(8% + clamp(50px,6vmin,80px)); text-align: right; max-width: 320px; }
+  .s7 .subtitle { left: 12%; transform: none; top: auto; bottom: 8%; text-align: left; max-width: 320px; }
+  .s8 .subtitle { top: auto; bottom: 10%; text-align: center; }
+  .s9 .subtitle { right: 10%; left: auto; transform: none; top: calc(10% + clamp(48px,6vmin,80px)); text-align: right; max-width: 340px; }
+  .s10 .subtitle { position: relative; left: auto; top: auto; bottom: auto; transform: none; margin: clamp(12px,2.6vmin,24px) auto 0; text-align: center; max-width: clamp(240px, 50vw, 520px); color: #5b3a2a; text-shadow: 0 4px 20px rgba(255,237,222,.65); }
+
     radial-gradient(900px 720px at 50% 18%, rgba(255,237,222,.68), rgba(0,0,0,0) 62%),
     linear-gradient(180deg, #f7eee4 0%, #cfc3bb 55%, #1a1730 100%); }
-  .s9::before { background: linear-gradient(180deg, rgba(255,250,244,.4), rgba(234,213,197,.28) 45%, rgba(26,19,34,.45)); mix-blend-mode: soft-light; }
-  .s9 .title { color: #5b3a2a; text-shadow: 0 8px 26px rgba(255,237,222,.75), 0 2px 10px rgba(40,16,22,.35); left: 50%; transform: translateX(-50%); top: 6vmin; font-family: 'Playfair Display', 'Lora', serif; font-weight: 600; letter-spacing: 1px; }
-  .final-photo { display: block; margin: clamp(32px,6vmin,72px) auto 0; width: min(52vmin, 72vw); max-width: 420px; border-radius: 22px; box-shadow: 0 30px 80px rgba(20,12,32,.55); filter: brightness(1.04) contrast(1.03); transition: transform 900ms var(--e), box-shadow 900ms var(--e); }
+  .s10::before { background: linear-gradient(180deg, rgba(255,250,244,.4), rgba(234,213,197,.28) 45%, rgba(26,19,34,.45)); mix-blend-mode: soft-light; }
+  .s10 .title { color: #5b3a2a; text-shadow: 0 8px 26px rgba(255,237,222,.75), 0 2px 10px rgba(40,16,22,.35); position: relative; left: auto; top: auto; transform: none; font-family: 'Playfair Display', 'Lora', serif; font-weight: 600; letter-spacing: 1px; margin: 0; text-align: center; }
+  .final-wrap { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: clamp(18px,3vmin,32px); max-width: min(64vmin, 80vw); margin: 0 auto; text-align: center; z-index: 6; }
+  .final-photo { display: block; width: min(58vmin, 76vw); max-width: 460px; border-radius: 22px; box-shadow: 0 30px 80px rgba(20,12,32,.55); filter: brightness(1.04) contrast(1.03); transition: transform 900ms var(--e), box-shadow 900ms var(--e); }
+
   .final-photo:hover { transform: translateY(-4px) scale(1.01); box-shadow: 0 38px 92px rgba(22,14,36,.6); }
+  @media (max-width: 600px) { .final-photo { width: min(70vmin, 88vw); } }
+
 
   /* Hide only big silhouette SVGs (preserve effect overlays) */
 
@@ -196,23 +211,28 @@
 
   .scene::before { /* global subtle grade */ content:""; position:absolute; inset:0; background: linear-gradient(180deg, rgba(0,0,0,.25), rgba(0,0,0,.35) 40%, rgba(0,0,0,.45)); z-index:0; }
 
-  .s1 { background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/7/70/Another_interior_view_-_Faisal_Mosque.jpg/1920px-Another_interior_view_-_Faisal_Mosque.jpg'); }
+  .s1 { background-image:
+    url('https://upload.wikimedia.org/wikipedia/commons/thumb/8/85/Clock_Tower_Faisalabad_by_Usman_Nadeem.jpg/1920px-Clock_Tower_Faisalabad_by_Usman_Nadeem.jpg'),
+    url('https://upload.wikimedia.org/wikipedia/commons/8/85/Clock_Tower_Faisalabad_by_Usman_Nadeem.jpg'),
+    linear-gradient(180deg, #342135, #0b1026); }
 
-  .s2 { background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/8/8d/TanahLot_2014.JPG/1920px-TanahLot_2014.JPG'); }
+  .s2 { background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/7/70/Another_interior_view_-_Faisal_Mosque.jpg/1920px-Another_interior_view_-_Faisal_Mosque.jpg'); }
 
-  .s3 { background-image: url("https://upload.wikimedia.org/wikipedia/commons/thumb/8/89/The_Ka%27ba%2C_Great_Mosque_of_Mecca%2C_Saudi_Arabia_%284%29.jpg/1920px-The_Ka%27ba%2C_Great_Mosque_of_Mecca%2C_Saudi_Arabia_%284%29.jpg"); }
+  .s3 { background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/8/8d/TanahLot_2014.JPG/1920px-TanahLot_2014.JPG'); }
 
-  .s4 { background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/9/90/Burj_Khalifa_%28worlds_tallest_building%29_and_the_Dubai_skyline_%2825781049892%29.jpg/1920px-Burj_Khalifa_%28worlds_tallest_building%29_and_the_Dubai_skyline_%2825781049892%29.jpg'); }
+  .s4 { background-image: url("https://upload.wikimedia.org/wikipedia/commons/thumb/8/89/The_Ka%27ba%2C_Great_Mosque_of_Mecca%2C_Saudi_Arabia_%284%29.jpg/1920px-The_Ka%27ba%2C_Great_Mosque_of_Mecca%2C_Saudi_Arabia_%284%29.jpg"); }
 
-  .s5 { background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/9/96/Toronto_-_ON_-_Toronto_Harbourfront7.jpg/1920px-Toronto_-_ON_-_Toronto_Harbourfront7.jpg'); }
+  .s5 { background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/9/90/Burj_Khalifa_%28worlds_tallest_building%29_and_the_Dubai_skyline_%2825781049892%29.jpg/1920px-Burj_Khalifa_%28worlds_tallest_building%29_and_the_Dubai_skyline_%2825781049892%29.jpg'); }
 
-  .s6 { background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/4/43/Elizabeth_Tower%2C_June_2022.jpg/1280px-Elizabeth_Tower%2C_June_2022.jpg'); }
+  .s6 { background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/9/96/Toronto_-_ON_-_Toronto_Harbourfront7.jpg/1920px-Toronto_-_ON_-_Toronto_Harbourfront7.jpg'); }
 
-  .s7 { background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/d/db/Lake_Saif_ul_Malook_-_Naran.jpg/1920px-Lake_Saif_ul_Malook_-_Naran.jpg'); }
+  .s7 { background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/4/43/Elizabeth_Tower%2C_June_2022.jpg/1280px-Elizabeth_Tower%2C_June_2022.jpg'); }
 
-  /* Rawalpindi photo for second-last scene (Cricket Stadium focus + robust fallbacks) */
+  .s8 { background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/d/db/Lake_Saif_ul_Malook_-_Naran.jpg/1920px-Lake_Saif_ul_Malook_-_Naran.jpg'); }
 
-  .s8 { background-image:
+  /* Rawalpindi photo for stadium homecoming */
+
+  .s9 { background-image:
 
     url('https://library.sportingnews.com/styles/twitter_card_120x120/s3/2025-02/Rawalpindi%20Stadium.jpg?itok=zI-zC2P4'),
 
@@ -324,25 +344,57 @@
 
   <style>
 
-    /* Scene 1: Wedding at Faisal Mosque */
+    /* Scene 1: Faisalabad clock tower sparkles */
+
+    .spark { position: absolute; bottom: 12%; left: 50%; width: .8vmin; height: .8vmin; border-radius: 50%; background: radial-gradient(circle, rgba(255,214,134,.95), rgba(255,214,134,0)); filter: blur(.3px); opacity: 0; transform: translate3d(-50%,0,0) scale(var(--scale,1)); animation: sparkRise var(--duration, 9s) ease-in-out infinite; pointer-events: none; mix-blend-mode: screen; z-index: 2; }
+
+    @keyframes sparkRise { 0% { transform: translate3d(-50%,0,0) scale(var(--scale,1)); opacity: 0; } 15% { opacity: .8; } 65% { transform: translate3d(calc(-50% + var(--drift, 6vw)), -42vh, 0) scale(1.2); opacity: 1; } 100% { transform: translate3d(calc(-50% + var(--drift, -6vw)), -70vh, 0) scale(.5); opacity: 0; } }
+
+    /* Scene 2: Wedding at Faisal Mosque */
 
     .petal { position: absolute; width: 1.4vmin; height: 1.4vmin; background: radial-gradient(circle at 30% 30%, #ffe0e8, #ff5c8a 70%); border-radius: 100% 10% 100% 10%; transform: rotate(45deg); filter: drop-shadow(0 0 6px rgba(255,92,138,.3)); animation: fall var(--fall, 10s) linear infinite; opacity: .0; z-index: 3; }
 
     @keyframes fall { 0% { opacity: 0; transform: translateY(-10vh) translateX(0) rotate(40deg) scale(.7);} 10%{opacity:.8} 100% { opacity: .9; transform: translateY(60vh) translateX(10vw) rotate(120deg) scale(1);} }
 
-    /* Scene 2: Bali ember drift */
+    /* Scene 3: Bali ember drift */
 
     .ember { position: absolute; bottom: -12%; left: 50%; width: .9vmin; height: .9vmin; border-radius: 50%; background: radial-gradient(circle at 30% 30%, rgba(255,203,140,.9), rgba(255,126,80,0) 70%); filter: blur(.4px); mix-blend-mode: screen; opacity: 0; transform: translate3d(-50%,0,0) scale(var(--scale,1)); animation: emberRise var(--rise, 11s) linear infinite; pointer-events: none; z-index: 2; }
 
-    @keyframes emberRise { 0% { transform: translate3d(-50%,0,0) scale(var(--scale,1)); opacity: 0; } 12% { opacity: .85; } 60% { opacity: .95; } 100% { transform: translate3d(calc(-50% + var(--drift, 8vw)), -95vh, 0) scale(.5); opacity: 0; }
+    @keyframes emberRise { 0% { transform: translate3d(-50%,0,0) scale(var(--scale,1)); opacity: 0; } 12% { opacity: .85; } 60% { opacity: .95; } 100% { transform: translate3d(calc(-50% + var(--drift, 8vw)), -95vh, 0) scale(.5); opacity: 0; } }
 
   </style>
 
-  <!-- Scenes 1 & 2 -->
+  <!-- Scenes 1 to 3 -->
 
-  <section class="scene s1 hide-on-inactive" data-duration="8500" aria-label="Wedding at Faisal Mosque, Islamabad">
+    <section class="scene s1 hide-on-inactive" data-duration="7800" aria-label="Faisalabad clock tower welcome">
+    <h2 class="title">Faisalabad</h2>
+    <p class="subtitle only-when-active">Here, Wahaj will first get to see Maryam</p>
+    <svg class="silhouette" viewBox="0 0 1200 700" role="img" aria-label="Faisalabad Clock Tower silhouette">
+      <g fill="#231f3d" opacity=".65">
+        <path d="M0,520 L1200,520 L1200,700 L0,700 Z"/>
+      </g>
+      <g transform="translate(600,210)" fill="#401d36">
+        <rect x="-30" y="120" width="60" height="220"/>
+        <rect x="-40" y="80" width="80" height="60"/>
+        <rect x="-56" y="40" width="112" height="50"/>
+        <rect x="-76" y="0" width="152" height="44"/>
+        <polygon fill="#532443" points="-10,-40 0,-70 10,-40"/>
+      </g>
+      <g transform="translate(600,250)" fill="#f8d5ae" opacity=".85">
+        <circle cx="0" cy="-20" r="16"/>
+        <rect x="-22" y="-4" width="44" height="12"/>
+      </g>
+      <g transform="translate(600,430)" fill="#2c1735" opacity=".8">
+        <rect x="-120" y="0" width="240" height="60"/>
+        <rect x="-160" y="60" width="320" height="50"/>
+      </g>
+    </svg>
+  </section>
+
+<section class="scene s2 hide-on-inactive" data-duration="8500" aria-label="Wedding at Faisal Mosque, Islamabad">
 
     <h2 class="title">Islamabad</h2>
+    <p class="subtitle only-when-active">The place where the couple will get married</p>
 
     <div class="stars"></div>
 
@@ -422,9 +474,10 @@
 
   </section>
 
-  <section class="scene s2" data-duration="8000" aria-label="Bali beach at sunset">
+  <section class="scene s3" data-duration="8000" aria-label="Bali beach at sunset">
 
     <h2 class="title">Bali</h2>
+    <p class="subtitle only-when-active">Paradise on Earth where the lovebirds will enjoy their honeymoon</p>
 
     <svg class="silhouette" viewBox="0 0 1200 700" role="img" aria-label="Bali silhouette">
 
@@ -488,9 +541,10 @@
 
   <!-- Scenes 3 to 6 -->
 
-  <section class="scene s3" data-duration="8000" aria-label="Makkah Kaaba under crescent moon">
+  <section class="scene s4" data-duration="8000" aria-label="Makkah Kaaba under crescent moon">
 
     <h2 class="title">Makkah</h2>
+    <p class="subtitle only-when-active">Where they will go to get closer to God</p>
 
     <div class="stars"></div>
 
@@ -518,9 +572,10 @@
 
   </section>
 
-  <section class="scene s4" data-duration="7500" aria-label="Dubai skyline with Burj Khalifa and dunes">
+  <section class="scene s5" data-duration="7500" aria-label="Dubai skyline with Burj Khalifa and dunes">
 
     <h2 class="title">Dubai</h2>
+    <p class="subtitle only-when-active">Post-Makkah activities hehe</p>
 
     <svg class="silhouette" viewBox="0 0 1200 700" role="img" aria-label="Burj Khalifa and skyline">
 
@@ -560,9 +615,10 @@
 
   </section>
 
-  <section class="scene s5" data-duration="8000" aria-label="Canada skyline with CN Tower and maple leaves">
+  <section class="scene s6" data-duration="8000" aria-label="Canada skyline with CN Tower and maple leaves">
 
     <h2 class="title">Toronto</h2>
+    <p class="subtitle only-when-active">Wifey wants to travel to Canada so Wahaj and she here now</p>
 
     <svg class="silhouette" viewBox="0 0 1200 700" role="img" aria-label="Toronto skyline">
 
@@ -600,9 +656,10 @@
 
   </section>
 
-  <section class="scene s6" data-duration="8000" aria-label="London Big Ben in the rain">
+  <section class="scene s7" data-duration="8000" aria-label="London Big Ben in the rain">
 
     <h2 class="title">London</h2>
+    <p class="subtitle only-when-active">UK sightseeing because why not? Hehe</p>
 
     <svg class="silhouette" viewBox="0 0 1200 700" role="img" aria-label="Big Ben silhouette">
 
@@ -656,9 +713,10 @@
 
   <!-- Scenes 7 & 8 -->
 
-  <section class="scene s7" data-duration="8500" aria-label="Naran Kaghan mountains and lake with a boat">
+  <section class="scene s8" data-duration="8500" aria-label="Naran Kaghan mountains and lake with a boat">
 
     <h2 class="title">Saif Ul Malook</h2>
+    <p class="subtitle only-when-active">Back to Pakistan because its our home</p>
 
     <svg class="silhouette" viewBox="0 0 1200 700" role="img" aria-label="Mountains and pines">
 
@@ -694,9 +752,10 @@
 
   </section>
 
-  <section class="scene s8 hide-on-inactive" data-duration="9000" aria-label="Rawalpindi Cricket Stadium">
+  <section class="scene s9 hide-on-inactive" data-duration="9000" aria-label="Rawalpindi Cricket Stadium">
 
     <h2 class="title">Rawalpindi</h2>
+    <p class="subtitle only-when-active">Babru's retirement match hopefully here ??</p>
 
     <div class="stars"></div>
 
@@ -752,11 +811,12 @@
 
   <!-- 9) Islamabad — Faisal Mosque Interior (marriage inside) -->
 
-  <section class="scene s9 hide-on-inactive" data-duration="12000" aria-label="Faisal Mosque interior marriage scene">
-
-    <img class="final-photo only-when-active" src="1.png" alt="Maryam and Wahaj smiling together in a warm Polaroid portrait" loading="lazy" decoding="async">
-    <h2 class="title">Maryam and Wahaj, Together Forever</h2>
-
+  <section class="scene s10 hide-on-inactive" data-duration="12000" aria-label="Faisal Mosque interior marriage scene">
+    <div class="final-wrap only-when-active">
+      <img class="final-photo" src="1.png" alt="Maryam and Wahaj smiling together in a warm Polaroid portrait" loading="lazy" decoding="async">
+      <h2 class="title">Maryam and Wahaj, Together Forever</h2>
+      <p class="subtitle">Bongu and Bongi Ki Jori</p>
+    </div>
   </section>
 
   <div class="grain"></div>
@@ -821,6 +881,28 @@
 
       if (scene.classList.contains('s1')){
 
+        for(let i=0;i<26;i++){
+
+          const spark = add('spark');
+
+          spark.style.left = rand(8,92)+'%';
+
+          spark.style.bottom = rand(8,32)+'%';
+
+          spark.style.animationDelay = rand(0,6)+'s';
+
+          spark.style.setProperty('--duration', rand(8,12)+'s');
+
+          spark.style.setProperty('--scale', rand(0.7,1.4).toFixed(2));
+
+          spark.style.setProperty('--drift', rand(-8,8)+'vw');
+
+        }
+
+      }
+
+      if (scene.classList.contains('s2')){
+
         for(let i=0;i<22;i++){
 
           const p = add('petal');
@@ -835,7 +917,7 @@
 
       }
 
-      if (scene.classList.contains('s2')){
+      if (scene.classList.contains('s3')){
 
         for(let i=0;i<28;i++){
 
@@ -855,7 +937,7 @@
 
       }
 
-      if (scene.classList.contains('s3')){
+      if (scene.classList.contains('s4')){
 
         for(let i=0;i<18;i++){
 
@@ -877,7 +959,7 @@
 
       }
 
-      if (scene.classList.contains('s4')){
+      if (scene.classList.contains('s5')){
 
         for(let i=0;i<42;i++){
 
@@ -899,7 +981,7 @@
 
       }
 
-      if (scene.classList.contains('s5')){
+      if (scene.classList.contains('s6')){
 
         for(let i=0;i<24;i++){
 
@@ -915,7 +997,7 @@
 
       }
 
-      if (scene.classList.contains('s6')){
+      if (scene.classList.contains('s7')){
 
         const rain = add('rain');
 
@@ -933,7 +1015,7 @@
 
       }
 
-      if (scene.classList.contains('s7')){
+      if (scene.classList.contains('s8')){
 
         for(let i=0;i<26;i++){
 
@@ -955,7 +1037,7 @@
 
       }
 
-      if (scene.classList.contains('s8')){
+      if (scene.classList.contains('s9')){
 
         const palettes = [
 
@@ -987,7 +1069,7 @@
 
       }
 
-      if (scene.classList.contains('s9')){
+      if (scene.classList.contains('s10')){
 
         const fw = add('fireworks');
 
@@ -1134,4 +1216,3 @@
 </body>
 
 </html>
-
