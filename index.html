@@ -1,1 +1,1137 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+
+  <title>Maryam and Wahaj</title>
+
+  <!-- Fonts -->
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;500;600&family=Playfair+Display:wght@600;700;900&family=Great+Vibes&display=swap" rel="stylesheet">
+
+  <!-- High-quality photo assets (Wikimedia Commons) -->
+
+  <link rel="preload" as="image" href="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Ali_Mujtaba_WLM2017_FAISAL_MOSQUE_019.jpg/1920px-Ali_Mujtaba_WLM2017_FAISAL_MOSQUE_019.jpg" />
+
+  <link rel="preload" as="image" href="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8d/TanahLot_2014.JPG/1920px-TanahLot_2014.JPG" />
+
+  <link rel="preload" as="image" href="https://upload.wikimedia.org/wikipedia/commons/thumb/8/89/The_Ka%27ba%2C_Great_Mosque_of_Mecca%2C_Saudi_Arabia_%284%29.jpg/1920px-The_Ka%27ba%2C_Great_Mosque_of_Mecca%2C_Saudi_Arabia_%284%29.jpg" />
+
+  <link rel="preload" as="image" href="https://upload.wikimedia.org/wikipedia/commons/thumb/9/90/Burj_Khalifa_%28worlds_tallest_building%29_and_the_Dubai_skyline_%2825781049892%29.jpg/1920px-Burj_Khalifa_%28worlds_tallest_building%29_and_the_Dubai_skyline_%2825781049892%29.jpg" />
+
+  <link rel="preload" as="image" href="https://upload.wikimedia.org/wikipedia/commons/thumb/9/96/Toronto_-_ON_-_Toronto_Harbourfront7.jpg/1920px-Toronto_-_ON_-_Toronto_Harbourfront7.jpg" />
+
+  <link rel="preload" as="image" href="https://upload.wikimedia.org/wikipedia/commons/thumb/4/43/Elizabeth_Tower%2C_June_2022.jpg/1280px-Elizabeth_Tower%2C_June_2022.jpg" />
+
+  <link rel="preload" as="image" href="https://upload.wikimedia.org/wikipedia/commons/thumb/d/db/Lake_Saif_ul_Malook_-_Naran.jpg/1920px-Lake_Saif_ul_Malook_-_Naran.jpg" />
+
+  <link rel="preload" as="image" href="https://upload.wikimedia.org/wikipedia/commons/thumb/e/ee/Ayub_National_Park_Rawalpindi.jpg/1920px-Ayub_National_Park_Rawalpindi.jpg" />
+
+  <link rel="preload" as="image" href="https://upload.wikimedia.org/wikipedia/commons/thumb/3/35/Rawalpindi_Railway_Station.jpg/1920px-Rawalpindi_Railway_Station.jpg" />
+
+  <link rel="preload" as="image" href="https://commons.wikimedia.org/wiki/Special:FilePath/Rawalpindi%20Cricket%20Stadium.jpg?width=1920" />
+
+  <link rel="preload" as="image" href="https://library.sportingnews.com/styles/twitter_card_120x120/s3/2025-02/Rawalpindi%20Stadium.jpg?itok=zI-zC2P4" />
+
+</head>
+
+<body>
+
+<style>
+
+  :root {
+
+    --t: 8s;
+
+    --e: cubic-bezier(.2,.9,.2,1);
+
+    --bg: #0b1026;
+
+    --fg: #ffffff;
+
+  }
+
+  * { box-sizing: border-box; }
+
+  html, body { height: 100%; }
+
+  body {
+
+    margin: 0; background: #0b1026; color: var(--fg);
+
+    font-family: 'Lora', Georgia, 'Times New Roman', serif;
+
+    overflow: hidden; user-select: none;
+
+    text-rendering: optimizeLegibility;
+
+    -webkit-font-smoothing: antialiased;
+
+    -moz-osx-font-smoothing: grayscale;
+
+  }
+
+  .stage { position: fixed; inset: 0; overflow: hidden; background:
+    radial-gradient(1200px 820px at 68% -12%, #503c5b 0%, #1c1e39 46%, rgba(9,12,26,1) 86%),
+    linear-gradient(180deg, #0c0f1e 0%, #080a15 100%); }
+
+  .scene { position: absolute; inset: 0; opacity: 0; transform: scale(1.03); transition: opacity 1200ms var(--e), transform 1600ms var(--e); display: grid; place-items: center; isolation: isolate; background-position: center center; background-size: cover; background-repeat: no-repeat; }
+
+  .scene.active { opacity: 1; transform: scale(1); }
+
+  .vignette::after { content: ""; position: absolute; inset: -10vmin; pointer-events: none; background:
+
+    radial-gradient(120vmax 80vmax at 50% 120%, rgba(0,0,0,.25), rgba(0,0,0,0) 40%),
+
+    radial-gradient(120vmax 80vmax at -20% 0%, rgba(0,0,0,.22), rgba(0,0,0,0) 36%),
+
+    radial-gradient(120vmax 80vmax at 120% 0%, rgba(0,0,0,.22), rgba(0,0,0,0) 36%);
+
+    z-index: 3; }
+
+  /* Removed pink sparkle hearts; per-scene effects below */
+
+  .plane { --plane-c: #fff; position: absolute; top: 15%; left: -15vmin; width: 10vmin; height: 10vmin; z-index: 4; opacity: 0; }
+
+  .plane.fly { animation: flyAcross 4s var(--e); }
+
+  @keyframes flyAcross { 0% { transform: translateX(0) translateY(0) rotate(6deg) scale(.9); opacity: 0;} 10% { opacity: 1;} 50% { transform: translateX(60vw) translateY(-5vh) rotate(0deg) scale(1);} 100% { transform: translateX(110vw) translateY(-10vh) rotate(-4deg) scale(1); opacity: 0;} }
+
+  .badge { position: absolute; bottom: 2.2vmin; left: 50%; transform: translateX(-50%); z-index: 5; display: inline-flex; align-items: center; gap: 1vmin; color: #ffebf1; text-shadow: 0 2px 6px rgba(0,0,0,.5); font-weight: 700; letter-spacing: .5px; font-size: clamp(14px, 2.2vmin, 22px); }
+
+  .badge .heart { width: 2.1vmin; height: 2.1vmin; min-width: 16px; min-height: 16px; transform: rotate(45deg); background:
+
+    radial-gradient(circle at 30% 35%, #ffd1dc, #ff6f91 60%), radial-gradient(circle at 70% 35%, #ffd1dc, #ff2e63 60%);
+
+    border-radius: 3px; box-shadow: 0 0 12px rgba(255,46,99,.55), 0 0 20px rgba(255,255,255,.05) inset; animation: pulse 2.6s ease-in-out infinite; }
+
+  @keyframes pulse { 0%, 100% { scale: 1 } 50% { scale: 1.1 } }
+
+  .progress { position: absolute; bottom: 6.4vmin; left: 50%; transform: translateX(-50%); display: flex; gap: .9vmin; z-index: 5; }
+
+  .progress .dot { width: 10px; height: 10px; transform: rotate(45deg); border-radius: 2px; background: rgba(255,255,255,.2); box-shadow: 0 0 0 1px rgba(255,255,255,.12) inset; }
+
+  .progress .dot.active { background: linear-gradient(135deg,#ff9bb6,#ff2e63); box-shadow: 0 0 10px rgba(255,46,99,.45); }
+
+  .grain { position: absolute; inset: 0; pointer-events: none; opacity: .08; z-index: 2; mix-blend-mode: soft-light; }
+
+  .grain::before { content: ""; position: absolute; inset: -50%; background:
+
+    radial-gradient(1px 1px at 20% 30%, #fff, transparent 40%),
+
+    radial-gradient(1px 1px at 80% 60%, #fff, transparent 40%),
+
+    radial-gradient(1px 1px at 40% 80%, #fff, transparent 40%),
+
+    radial-gradient(1px 1px at 60% 20%, #fff, transparent 40%);
+
+    animation: grain 7s steps(6) infinite; filter: blur(.3px); }
+
+  @keyframes grain { from { transform: translate(0,0) } to { transform: translate(-10%, -10%) } }
+
+  svg { width: 82vmin; max-width: 92vw; height: auto; overflow: visible; }
+
+  .silhouette { fill: #0b0f1b; }
+
+  .glow { filter: drop-shadow(0 0 14px rgba(255,255,255,.28)); }
+
+  .shine { fill: #fff; opacity: .88; }
+
+  /* Scene title (text-only, blended) */
+
+  .title { position: absolute; top: 6vmin; left: 50%; transform: translateX(-50%);
+
+    padding: 0; border-radius: 0; font-weight: 900; letter-spacing: .5px;
+
+    font-size: clamp(24px, 7vmin, 44px);
+
+    color: #ffffff; text-shadow: 0 2px 14px rgba(0,0,0,.55), 0 0 34px rgba(0,0,0,.35);
+
+    font-family: 'Playfair Display', 'Lora', Georgia, serif;
+
+    -webkit-text-stroke: .6px rgba(0,0,0,.35);
+
+    pointer-events: none; z-index: 6; mix-blend-mode: normal; }
+
+  /* Per-scene themed title colors/placement */
+
+  .s1 .title { color: #e8ffe8; text-shadow: 0 2px 12px rgba(0,0,0,.6), 0 0 28px rgba(0,128,64,.25); }
+
+  .s2 .title { color: #ffd27a; text-shadow: 0 2px 12px rgba(27,16,56,.7), 0 0 28px rgba(255,122,0,.35); left: 12%; transform: none; bottom: 12%; top: auto; }
+
+  .s3 .title { color: #f0d27a; text-shadow: 0 2px 12px rgba(0,0,0,.8), 0 0 26px rgba(240,210,122,.35); left: 8%; transform: none; top: 8%; }
+
+  .s4 .title { color: #f3e4b3; text-shadow: 0 2px 12px rgba(26,12,44,.8), 0 0 24px rgba(212,175,55,.35); left: auto; right: 8%; transform: none; top: 8%; }
+
+  .s5 .title { color: #ffffff; text-shadow: 0 2px 12px rgba(0,0,0,.65), 0 0 24px rgba(208,0,0,.3); left: 50%; transform: translateX(-50%); top: 8%; }
+
+  .s6 .title { color: #a8c7ff; text-shadow: 0 2px 12px rgba(0,0,0,.7), 0 0 24px rgba(80,120,200,.35); left: 12%; transform: none; bottom: 14%; top: auto; }
+
+  .s7 .title { color: #bdf7ff; text-shadow: 0 2px 12px rgba(0,0,0,.65), 0 0 24px rgba(0,180,200,.35); left: 50%; transform: translateX(-50%) rotate(-2deg); bottom: 12%; top: auto; }
+
+  .s8 .title { color: #ffef9e; text-shadow: 0 2px 12px rgba(0,0,0,.75), 0 0 24px rgba(220,180,60,.4); left: auto; right: 10%; transform: none; top: 10%; }
+
+  .s9 { background-image:
+    radial-gradient(900px 720px at 50% 18%, rgba(255,237,222,.68), rgba(0,0,0,0) 62%),
+    linear-gradient(180deg, #f7eee4 0%, #cfc3bb 55%, #1a1730 100%); }
+  .s9::before { background: linear-gradient(180deg, rgba(255,250,244,.4), rgba(234,213,197,.28) 45%, rgba(26,19,34,.45)); mix-blend-mode: soft-light; }
+  .s9 .title { color: #5b3a2a; text-shadow: 0 8px 26px rgba(255,237,222,.75), 0 2px 10px rgba(40,16,22,.35); left: 50%; transform: translateX(-50%); top: 6vmin; font-family: 'Playfair Display', 'Lora', serif; font-weight: 600; letter-spacing: 1px; }
+  .final-photo { display: block; margin: clamp(32px,6vmin,72px) auto 0; width: min(52vmin, 72vw); max-width: 420px; border-radius: 22px; box-shadow: 0 30px 80px rgba(20,12,32,.55); filter: brightness(1.04) contrast(1.03); transition: transform 900ms var(--e), box-shadow 900ms var(--e); }
+  .final-photo:hover { transform: translateY(-4px) scale(1.01); box-shadow: 0 38px 92px rgba(22,14,36,.6); }
+
+  /* Hide only big silhouette SVGs (preserve effect overlays) */
+
+  .scene > svg.silhouette { display: none !important; }
+
+  /* Removed old per-figure wardrobe system */
+
+  .scene::before { /* global subtle grade */ content:""; position:absolute; inset:0; background: linear-gradient(180deg, rgba(0,0,0,.25), rgba(0,0,0,.35) 40%, rgba(0,0,0,.45)); z-index:0; }
+
+  .s1 { background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/7/70/Another_interior_view_-_Faisal_Mosque.jpg/1920px-Another_interior_view_-_Faisal_Mosque.jpg'); }
+
+  .s2 { background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/8/8d/TanahLot_2014.JPG/1920px-TanahLot_2014.JPG'); }
+
+  .s3 { background-image: url("https://upload.wikimedia.org/wikipedia/commons/thumb/8/89/The_Ka%27ba%2C_Great_Mosque_of_Mecca%2C_Saudi_Arabia_%284%29.jpg/1920px-The_Ka%27ba%2C_Great_Mosque_of_Mecca%2C_Saudi_Arabia_%284%29.jpg"); }
+
+  .s4 { background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/9/90/Burj_Khalifa_%28worlds_tallest_building%29_and_the_Dubai_skyline_%2825781049892%29.jpg/1920px-Burj_Khalifa_%28worlds_tallest_building%29_and_the_Dubai_skyline_%2825781049892%29.jpg'); }
+
+  .s5 { background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/9/96/Toronto_-_ON_-_Toronto_Harbourfront7.jpg/1920px-Toronto_-_ON_-_Toronto_Harbourfront7.jpg'); }
+
+  .s6 { background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/4/43/Elizabeth_Tower%2C_June_2022.jpg/1280px-Elizabeth_Tower%2C_June_2022.jpg'); }
+
+  .s7 { background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/d/db/Lake_Saif_ul_Malook_-_Naran.jpg/1920px-Lake_Saif_ul_Malook_-_Naran.jpg'); }
+
+  /* Rawalpindi photo for second-last scene (Cricket Stadium focus + robust fallbacks) */
+
+  .s8 { background-image:
+
+    url('https://library.sportingnews.com/styles/twitter_card_120x120/s3/2025-02/Rawalpindi%20Stadium.jpg?itok=zI-zC2P4'),
+
+    url('https://commons.wikimedia.org/wiki/Special:FilePath/Rawalpindi%20Cricket%20Stadium.jpg?width=1920'),
+
+    url('https://commons.wikimedia.org/wiki/Special:FilePath/Rawalpindi_Cricket_Stadium.jpg?width=1920'),
+
+    url('https://source.unsplash.com/1920x1080/?rawalpindi,cricket,stadium'),
+
+    url('https://source.unsplash.com/1920x1080/?cricket,stadium,pakistan'),
+
+    linear-gradient(180deg, #193a2f, #0b1026); }
+
+  .stars { position: absolute; inset: 0; background-image: radial-gradient(1px 1px at 10% 20%, rgba(255,255,255,.8), transparent), radial-gradient(1px 1px at 30% 40%, rgba(255,255,255,.6), transparent), radial-gradient(1px 1px at 70% 20%, rgba(255,255,255,.9), transparent), radial-gradient(1px 1px at 50% 70%, rgba(255,255,255,.7), transparent), radial-gradient(1px 1px at 85% 35%, rgba(255,255,255,.6), transparent); opacity: .85; mix-blend-mode: screen; filter: drop-shadow(0 0 6px rgba(255,255,255,.4)); animation: twinkle 12s linear infinite; }
+
+  @keyframes twinkle { 0%,100% { opacity:.8 } 50% { opacity: 1 } }
+
+  .hide-on-inactive .only-when-active { opacity: 0; transition: opacity 1200ms var(--e) 200ms; }
+
+  .hide-on-inactive.active .only-when-active { opacity: 1; }
+
+  /* Navigation arrows */
+
+  .nav { position: absolute; top: 50%; transform: translateY(-50%); z-index: 6; display: grid; place-items: center; }
+
+  .nav button { width: clamp(44px,6vmin,64px); height: clamp(44px,6vmin,64px); border-radius: 50%; border: none; cursor: pointer; background: rgba(0,0,0,.45); color: #fff; box-shadow: 0 8px 20px rgba(0,0,0,.25); display: grid; place-items: center; transition: transform .2s var(--e), background .2s; }
+
+  .nav button:active { transform: scale(.95); }
+
+  .nav.left { left: 1.6vmin; }
+
+  .nav.right { right: 1.6vmin; }
+
+  .nav svg { width: 50%; height: 50%; }
+
+  @media (hover:hover){ .nav button:hover { background: rgba(255,255,255,.15); } }
+
+  /* Intro overlay */
+
+  .intro { position: absolute; inset: 0; z-index: 7; display: grid; place-items: center; background:
+
+    radial-gradient(1200px 900px at 50% -20%, rgba(255,255,255,.25), rgba(0,0,0,.75) 60%),
+
+    url('https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Ali_Mujtaba_WLM2017_FAISAL_MOSQUE_019.jpg/1920px-Ali_Mujtaba_WLM2017_FAISAL_MOSQUE_019.jpg') center center / cover no-repeat,
+
+    #0b1026; color:#fff; text-align:center; padding: 8vmin 4vmin; }
+
+  .intro .card { max-width: 760px; background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.2); border-radius: 18px; padding: clamp(16px,4vmin,40px); box-shadow: 0 20px 60px rgba(0,0,0,.45); backdrop-filter: blur(6px); }
+
+  .intro h1 { margin: 0 0 .4em; font-size: clamp(24px,6vmin,44px); letter-spacing:.5px; }
+
+  .intro p { margin: .2em 0 1.2em; opacity: .9; font-size: clamp(14px, 2.4vmin, 18px); }
+
+  .intro .cta { font-size: clamp(14px,2.4vmin,18px); font-weight: 700; color: #0b1026; background: linear-gradient(135deg,#ffd1dc,#ff2e63); border: none; border-radius: 999px; padding: 1em 2em; cursor: pointer; box-shadow: 0 12px 30px rgba(255,46,99,.35); }
+
+  .intro .cta:active { transform: translateY(1px); }
+
+  /* Avatars and environment interactions removed */
+
+  /* Mobile tweaks */
+
+  @media (max-width: 640px){ .badge { bottom: 3.2vmin; } .progress { bottom: 10vmin; } }
+
+</style>
+
+<div class="stage vignette">
+
+  <svg class="plane" viewBox="0 0 100 100" aria-hidden="true">
+
+    <g fill="none" stroke="white" stroke-linecap="round" stroke-linejoin="round" stroke-width="4">
+
+      <path d="M10 55 L60 50 L90 30 L95 35 L70 55 L60 80 L52 77 L55 55 Z" fill="white"/>
+
+      <circle cx="40" cy="50" r="2" fill="#a8e6ff" />
+
+    </g>
+
+  </svg>
+
+  <!-- Intro overlay -->
+
+  <div class="intro" id="intro">
+
+    <div class="card">
+
+      <h1>Maryam and Wahaj's Journey of Life</h1>
+
+      <button class="cta" id="startBtn">Tap to Start</button>
+
+    </div>
+
+  </div>
+
+  <!-- Manual navigation -->
+
+  <div class="nav left" aria-hidden="false"><button id="prevBtn" aria-label="Previous scene">
+
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+
+  </button></div>
+
+  <div class="nav right" aria-hidden="false"><button id="nextBtn" aria-label="Next scene">
+
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+
+  </button></div>
+
+  <!-- Couple removed -->
+
+  <style>
+
+    /* Scene 1: Wedding at Faisal Mosque */
+
+    .petal { position: absolute; width: 1.4vmin; height: 1.4vmin; background: radial-gradient(circle at 30% 30%, #ffe0e8, #ff5c8a 70%); border-radius: 100% 10% 100% 10%; transform: rotate(45deg); filter: drop-shadow(0 0 6px rgba(255,92,138,.3)); animation: fall var(--fall, 10s) linear infinite; opacity: .0; z-index: 3; }
+
+    @keyframes fall { 0% { opacity: 0; transform: translateY(-10vh) translateX(0) rotate(40deg) scale(.7);} 10%{opacity:.8} 100% { opacity: .9; transform: translateY(60vh) translateX(10vw) rotate(120deg) scale(1);} }
+
+    /* Scene 2: Bali ember drift */
+
+    .ember { position: absolute; bottom: -12%; left: 50%; width: .9vmin; height: .9vmin; border-radius: 50%; background: radial-gradient(circle at 30% 30%, rgba(255,203,140,.9), rgba(255,126,80,0) 70%); filter: blur(.4px); mix-blend-mode: screen; opacity: 0; transform: translate3d(-50%,0,0) scale(var(--scale,1)); animation: emberRise var(--rise, 11s) linear infinite; pointer-events: none; z-index: 2; }
+
+    @keyframes emberRise { 0% { transform: translate3d(-50%,0,0) scale(var(--scale,1)); opacity: 0; } 12% { opacity: .85; } 60% { opacity: .95; } 100% { transform: translate3d(calc(-50% + var(--drift, 8vw)), -95vh, 0) scale(.5); opacity: 0; }
+
+  </style>
+
+  <!-- Scenes 1 & 2 -->
+
+  <section class="scene s1 hide-on-inactive" data-duration="8500" aria-label="Wedding at Faisal Mosque, Islamabad">
+
+    <h2 class="title">Islamabad</h2>
+
+    <div class="stars"></div>
+
+    <svg class="silhouette" viewBox="0 0 1200 700" role="img" aria-label="Faisal Mosque with couple">
+
+      <defs>
+
+        <lineargradient id="mosqueG" x1="0" y1="0" x2="0" y2="1">
+
+          <stop offset="0%" stop-color="#ffffff"/>
+
+          <stop offset="100%" stop-color="#e3e7ff"/>
+
+        </lineargradient>
+
+        <filter id="softGlow"><fegaussianblur in="SourceGraphic" stdDeviation="3" result="blur"/><femerge><femergenode in="blur"/><femergenode in="SourceGraphic"/></femerge></filter>
+
+      </defs>
+
+      <g fill="#1a1f4a" opacity=".6">
+
+        <path d="M0,520 C200,420 300,420 500,520 C700,620 900,600 1200,520 L1200,700 L0,700 Z"/>
+
+      </g>
+
+      <g transform="translate(200,220)" filter="url(#softGlow)">
+
+        <g fill="url(#mosqueG)" stroke="#cfd6ff" stroke-width="3">
+
+          <path d="M40,20 L55,20 L65,380 L30,380 Z"/>
+
+          <path d="M760,20 L745,20 L735,380 L770,380 Z"/>
+
+          <path d="M200,10 L215,10 L230,360 L185,360 Z"/>
+
+          <path d="M600,10 L585,10 L570,360 L615,360 Z"/>
+
+        </g>
+
+        <g>
+
+          <path d="M400,0 L140,260 L400,240 L660,260 Z" fill="url(#mosqueG)" stroke="#cfd6ff" stroke-width="4"/>
+
+          <path d="M400,240 L140,260 L400,420 L660,260 Z" fill="#f6f7ff" stroke="#cfd6ff" stroke-width="4"/>
+
+          <rect x="330" y="420" width="140" height="16" fill="#e3e7ff"/>
+
+        </g>
+
+      </g>
+
+      <g transform="translate(540,470) scale(1.3)" class="glow">
+
+        <path d="M-40,0 q20,-10 25,-40 q-6,-25 -25,-25 q-22,4 -24,25 q2,20 24,40 z" fill="#0b0f1b"/>
+
+        <rect x="-56" y="0" width="32" height="70" rx="8" fill="#0b0f1b"/>
+
+        <circle cx="20" cy="-60" r="18" fill="#0b0f1b"/>
+
+        <path d="M10,0 q40,20 90,120 q-60,10 -120,0 q0,-30 10,-70 q4,-20 10,-50 z" fill="#0b0f1b"/>
+
+        <path d="M30,-54 q-8,10 -6,24 q16,6 30,0 q2,-12 -10,-24 z" fill="#1a2340" opacity=".8"/>
+
+        <g transform="translate(0,-10) rotate(45)">
+
+          <rect x="-6" y="-6" width="12" height="12" rx="3" fill="#ff2e63"/>
+
+          <circle cx="-2" cy="-6" r="6" fill="#ff2e63"/>
+
+          <circle cx="6" cy="-2" r="6" fill="#ff2e63"/>
+
+        </g>
+
+      </g>
+
+    </svg>
+
+  </section>
+
+  <section class="scene s2" data-duration="8000" aria-label="Bali beach at sunset">
+
+    <h2 class="title">Bali</h2>
+
+    <svg class="silhouette" viewBox="0 0 1200 700" role="img" aria-label="Bali silhouette">
+
+      <path d="M200,520 L520,240 L740,520 Z" fill="#1b1038" opacity=".85"/>
+
+      <g transform="translate(830,330) scale(1.2)" fill="#0f0b25">
+
+        <rect x="-80" y="160" width="160" height="14"/>
+
+        <rect x="-70" y="140" width="140" height="10"/>
+
+        <rect x="-60" y="120" width="120" height="10"/>
+
+        <rect x="-50" y="104" width="100" height="9"/>
+
+        <rect x="-40" y="90"  width="80"  height="8"/>
+
+        <rect x="-30" y="78"  width="60"  height="7"/>
+
+        <rect x="-20" y="68"  width="40"  height="6"/>
+
+        <rect x="-12" y="58"  width="24"  height="6"/>
+
+      </g>
+
+    </svg>
+
+  </section>
+
+  <style>
+
+    /* Scene 3: Kaaba lantern lumens */
+
+    .lumen { position: absolute; bottom: 18%; left: 50%; width: .9vmin; height: .9vmin; border-radius: 50%; background: radial-gradient(circle at 40% 40%, rgba(255,247,222,.95), rgba(255,208,96,0) 70%); filter: blur(.45px); mix-blend-mode: screen; opacity: 0; transform: translate3d(-50%,0,0) scale(var(--scale,1)); animation: lumenPulse var(--duration, 9s) ease-in-out infinite; pointer-events: none; z-index: 2; }
+
+    @keyframes lumenPulse { 0% { transform: translate3d(-50%,0,0) scale(var(--scale,1)); opacity: 0; } 20% { opacity: .85; } 55% { transform: translate3d(calc(-50% + var(--arc, 6vw)), -14vh, 0) scale(1.2); opacity: 1; } 100% { transform: translate3d(calc(-50% + var(--arc, -6vw)), -26vh, 0) scale(.6); opacity: 0; }
+
+    /* Scene 4: Desert sand drift */
+
+    .sand-grain { position: absolute; bottom: 4%; left: 10%; width: .5vmin; height: .5vmin; border-radius: 50%; background: radial-gradient(circle, rgba(255,224,170,.9), rgba(227,163,72,0)); filter: blur(.45px); mix-blend-mode: screen; opacity: 0; transform: translate3d(0,0,0) scale(var(--scale,1)); animation: sandDrift var(--duration, 10s) linear infinite; pointer-events: none; z-index: 2; }
+
+    @keyframes sandDrift { 0% { transform: translate3d(0,0,0) scale(var(--scale,1)); opacity: 0; } 15% { opacity: .75; } 65% { opacity: .9; } 100% { transform: translate3d(var(--shiftX, 20vw), -42vh, 0) scale(.4); opacity: 0; }
+
+    /* Scene 5: Canada leaves */
+
+    .leaf { position: absolute; width: 2.4vmin; height: 2.4vmin; background: linear-gradient(135deg,#ff4d4d,#b10000); clip-path: polygon(50% 0%, 61% 19%, 78% 16%, 68% 33%, 84% 38%, 69% 44%, 76% 58%, 58% 55%, 56% 76%, 50% 60%, 44% 76%, 42% 55%, 24% 58%, 31% 44%, 16% 38%, 32% 33%, 22% 16%, 39% 19%);
+
+      transform-origin: 50% 50%; filter: drop-shadow(0 2px 8px rgba(177,0,0,.35)); opacity: 0; animation: leafFall 10s linear infinite; pointer-events: none; }
+
+    @keyframes leafFall { 0% { transform: translateY(-10vh) rotate(-15deg) } 10% { opacity: 1 } 100% { transform: translateY(65vh) rotate(35deg); opacity: .95 } }
+
+    /* Scene 6: UK rain */
+
+    .rain { position: absolute; inset: 0; overflow: hidden; pointer-events: none; z-index: 2; }
+
+    .drop { position: absolute; width: 2px; height: 12vh; background: linear-gradient(to bottom, rgba(255,255,255,.0), rgba(255,255,255,.7)); filter: blur(.3px); opacity: .0; animation: rain 1.2s linear infinite; }
+
+    @keyframes rain { 0% { transform: translateY(-12vh); opacity: 0 } 30% { opacity: .7 } 100% { transform: translateY(100vh); opacity: 0 } }
+
+  </style>
+
+  <!-- Scenes 3 to 6 -->
+
+  <section class="scene s3" data-duration="8000" aria-label="Makkah Kaaba under crescent moon">
+
+    <h2 class="title">Makkah</h2>
+
+    <div class="stars"></div>
+
+    <svg class="silhouette" viewBox="0 0 1200 700" role="img" aria-label="Kaaba silhouette">
+
+      <rect x="140" y="420" width="920" height="120" fill="#131a38" opacity=".6"/>
+
+      <g transform="translate(480,300)">
+
+        <rect x="0" y="0" width="240" height="220" rx="4" fill="#0a0a0a"/>
+
+        <rect x="0" y="60" width="240" height="20" fill="#d4af37"/>
+
+        <rect x="20" y="40" width="30" height="150" fill="#1b1b1b"/>
+
+        <rect x="100" y="40" width="30" height="150" fill="#1b1b1b"/>
+
+        <rect x="180" y="40" width="30" height="150" fill="#1b1b1b"/>
+
+        <circle cx="120" cy="200" r="6" fill="#d4af37"/>
+
+      </g>
+
+    </svg>
+
+  </section>
+
+  <section class="scene s4" data-duration="7500" aria-label="Dubai skyline with Burj Khalifa and dunes">
+
+    <h2 class="title">Dubai</h2>
+
+    <svg class="silhouette" viewBox="0 0 1200 700" role="img" aria-label="Burj Khalifa and skyline">
+
+      <g fill="#2a1241" opacity=".8">
+
+        <rect x="100" y="420" width="70" height="160"/>
+
+        <rect x="190" y="380" width="90" height="200"/>
+
+        <rect x="300" y="450" width="120" height="130"/>
+
+        <rect x="450" y="400" width="90" height="180"/>
+
+        <rect x="820" y="430" width="120" height="150"/>
+
+        <rect x="960" y="390" width="70" height="190"/>
+
+      </g>
+
+      <g transform="translate(640,120)" fill="#3a1c58">
+
+        <rect x="-18" y="120" width="36" height="420"/>
+
+        <rect x="-12" y="80" width="24" height="40"/>
+
+        <rect x="-8" y="50" width="16" height="30"/>
+
+        <rect x="-5" y="28" width="10" height="22"/>
+
+        <rect x="-3" y="10" width="6" height="20"/>
+
+        <rect x="-2" y="0" width="4" height="10"/>
+
+      </g>
+
+    </svg>
+
+  </section>
+
+  <section class="scene s5" data-duration="8000" aria-label="Canada skyline with CN Tower and maple leaves">
+
+    <h2 class="title">Toronto</h2>
+
+    <svg class="silhouette" viewBox="0 0 1200 700" role="img" aria-label="Toronto skyline">
+
+      <g fill="#173d67" opacity=".7">
+
+        <rect x="100" y="480" width="120" height="120"/>
+
+        <rect x="240" y="440" width="90" height="160"/>
+
+        <rect x="350" y="500" width="110" height="100"/>
+
+        <rect x="500" y="420" width="80" height="180"/>
+
+        <rect x="880" y="450" width="130" height="150"/>
+
+        <rect x="1030" y="480" width="70" height="120"/>
+
+      </g>
+
+      <g transform="translate(620,140)">
+
+        <rect x="-6" y="160" width="12" height="320" fill="#1d2b44"/>
+
+        <circle cx="0" cy="150" r="40" fill="#1d2b44"/>
+
+        <circle cx="0" cy="150" r="28" fill="#22395c"/>
+
+        <rect x="-2" y="70" width="4" height="90" fill="#1d2b44"/>
+
+        <rect x="-1" y="30" width="2" height="40" fill="#1d2b44"/>
+
+      </g>
+
+    </svg>
+
+  </section>
+
+  <section class="scene s6" data-duration="8000" aria-label="London Big Ben in the rain">
+
+    <h2 class="title">London</h2>
+
+    <svg class="silhouette" viewBox="0 0 1200 700" role="img" aria-label="Big Ben silhouette">
+
+      <g transform="translate(580,140)" fill="#2f2f4a">
+
+        <rect x="-40" y="0" width="80" height="360"/>
+
+        <rect x="-60" y="360" width="120" height="160"/>
+
+        <polygon points="-60,360 0,420 60,360"/>
+
+        <circle cx="0" cy="220" r="34" fill="#e7e7f7"/>
+
+        <circle cx="0" cy="220" r="30" fill="#ffffff"/>
+
+        <rect x="-2" y="192" width="4" height="30" fill="#2f2f4a"/>
+
+        <rect x="0" y="220" width="24" height="4" fill="#2f2f4a" transform="rotate(20)"/>
+
+      </g>
+
+      <rect x="0" y="520" width="1200" height="14" fill="#2f2f4a"/>
+
+    </svg>
+
+  </section>
+
+  <style>
+
+    /* Scene 7: Highland glimmer mist */
+
+    .glimmer { position: absolute; bottom: 14%; left: 50%; width: .8vmin; height: .8vmin; border-radius: 50%; background: radial-gradient(circle, rgba(189,247,255,.9), rgba(189,247,255,0) 70%); filter: blur(.4px); mix-blend-mode: screen; opacity: 0; transform: translate3d(-50%,0,0) scale(var(--scale,1)); animation: glimmerDrift var(--duration, 12s) ease-in-out infinite; pointer-events: none; z-index: 2; }
+
+    @keyframes glimmerDrift { 0% { transform: translate3d(-50%,0,0) scale(var(--scale,1)); opacity: 0; } 18% { opacity: .85; } 60% { transform: translate3d(calc(-50% + var(--sway, 8vw)), -24vh, 0) scale(1.1); opacity: 1; } 100% { transform: translate3d(calc(-50% + var(--sway, -8vw)), -40vh, 0) scale(.6); opacity: 0; }
+
+    /* Scene 8: Stadium celebration confetti */
+
+    .confetti { position: absolute; top: -12%; left: 50%; width: .9vmin; height: 2.4vmin; border-radius: .2vmin; background: linear-gradient(180deg, rgba(255,240,170,.95), rgba(255,95,125,.85)); box-shadow: 0 0 12px rgba(255,180,60,.22); opacity: 0; transform: translate3d(-50%,0,0) rotate(var(--tilt, 12deg)); animation: confettiFall var(--duration, 6s) ease-in infinite; pointer-events: none; z-index: 3; }
+
+    @keyframes confettiFall { 0% { transform: translate3d(-50%,0,0) rotate(var(--tilt, 12deg)); opacity: 0; } 12% { opacity: .95; } 100% { transform: translate3d(calc(-50% + var(--driftX, 12vw)), 115vh, 0) rotate(calc(var(--tilt, 12deg) + 200deg)); opacity: 0; }
+
+    /* Scene 8: Finale fireworks */
+
+    .fireworks { position: absolute; inset: 0; pointer-events: none; z-index: 3; }
+
+    .burst { position: absolute; width: .6vmin; height: .6vmin; background: #fff; border-radius: 50%; box-shadow: 0 0 14px rgba(255,255,255,.6); animation: burst 2s ease-out infinite; }
+
+    @keyframes burst { 0% { transform: translate(-50%,-50%) scale(0); opacity: 1 } 80% { opacity: 1 } 100% { transform: translate(-50%,-50%) scale(28); opacity: 0 }
+
+  </style>
+
+  <!-- Scenes 7 & 8 -->
+
+  <section class="scene s7" data-duration="8500" aria-label="Naran Kaghan mountains and lake with a boat">
+
+    <h2 class="title">Saif Ul Malook</h2>
+
+    <svg class="silhouette" viewBox="0 0 1200 700" role="img" aria-label="Mountains and pines">
+
+      <g fill="#0e5660">
+
+        <path d="M0,520 L200,300 L380,520 Z"/>
+
+        <path d="M240,520 L520,240 L820,520 Z"/>
+
+        <path d="M700,520 L920,320 L1200,520 Z"/>
+
+      </g>
+
+      <g fill="#dffbff" opacity=".6">
+
+        <polygon points="520,240 470,310 570,310"/>
+
+        <polygon points="200,300 170,340 230,340"/>
+
+        <polygon points="920,320 890,360 950,360"/>
+
+      </g>
+
+      <g fill="#0b3f42" opacity=".9">
+
+        <path d="M120,520 l30,-50 l-14,0 l22,-38 l-12,0 l20,-34 l-10,0 l20,-32 l-10,0 l22,-30 l22,30 l-10,0 l20,32 l-10,0 l20,34 l-12,0 l22,38 l-14,0 l30,50 Z"/>
+
+        <path d="M920,520 l26,-44 l-12,0 l18,-32 l-10,0 l16,-28 l-10,0 l18,-26 l18,26 l-10,0 l16,28 l-10,0 l18,32 l-12,0 l26,44 Z"/>
+
+      </g>
+
+    </svg>
+
+  </section>
+
+  <section class="scene s8 hide-on-inactive" data-duration="9000" aria-label="Rawalpindi Cricket Stadium">
+
+    <h2 class="title">Rawalpindi</h2>
+
+    <div class="stars"></div>
+
+    <svg class="silhouette" viewBox="0 0 1200 700" role="img" aria-label="Faisal Mosque homecoming">
+
+      <g fill="#1a1f4a" opacity=".55">
+
+        <path d="M0,520 C200,420 300,420 500,520 C700,620 900,600 1200,520 L1200,700 L0,700 Z"/>
+
+      </g>
+
+      <defs>
+
+        <lineargradient id="mosqueBright" x1="0" y1="0" x2="0" y2="1">
+
+          <stop offset="0%" stop-color="#ffffff"/>
+
+          <stop offset="100%" stop-color="#fff3d9"/>
+
+        </lineargradient>
+
+      </defs>
+
+      <g transform="translate(200,220)" class="glow">
+
+        <g fill="url(#mosqueBright)" stroke="#fff1c6" stroke-width="3">
+
+          <path d="M40,20 L55,20 L65,380 L30,380 Z"/>
+
+          <path d="M760,20 L745,20 L735,380 L770,380 Z"/>
+
+          <path d="M200,10 L215,10 L230,360 L185,360 Z"/>
+
+          <path d="M600,10 L585,10 L570,360 L615,360 Z"/>
+
+        </g>
+
+        <g>
+
+          <path d="M400,0 L140,260 L400,240 L660,260 Z" fill="url(#mosqueBright)" stroke="#fff1c6" stroke-width="4"/>
+
+          <path d="M400,240 L140,260 L400,420 L660,260 Z" fill="#fff7e6" stroke="#fff1c6" stroke-width="4"/>
+
+          <rect x="330" y="420" width="140" height="16" fill="#fff1c6"/>
+
+        </g>
+
+      </g>
+
+    </svg>
+
+  </section>
+
+  <!-- 9) Islamabad — Faisal Mosque Interior (marriage inside) -->
+
+  <section class="scene s9 hide-on-inactive" data-duration="12000" aria-label="Faisal Mosque interior marriage scene">
+
+    <img class="final-photo only-when-active" src="1.png" alt="Maryam and Wahaj smiling together in a warm Polaroid portrait" loading="lazy" decoding="async">
+    <h2 class="title">Maryam and Wahaj, Together Forever</h2>
+
+  </section>
+
+  <div class="grain"></div>
+
+  <div class="progress" id="progress"></div>
+
+  <div class="badge" aria-label="Maryam and Wahaj forever">
+
+    <span>Maryam</span>
+
+    <span class="heart" aria-hidden="true"></span>
+
+    <span>Wahaj</span>
+
+  </div>
+
+</div>
+
+<script>
+
+  (function() {
+
+    const scenes = Array.from(document.querySelectorAll('.scene'));
+
+    const plane = document.querySelector('.plane');
+
+    const progress = document.getElementById('progress');
+
+    const fxCache = new WeakSet();
+
+    // Progress hearts
+
+    scenes.forEach(() => {
+
+      const d = document.createElement('div');
+
+      d.className = 'dot';
+
+      progress.appendChild(d);
+
+    });
+
+    // Per-scene effect population
+
+    function populateSceneEffects(scene){
+
+      if (fxCache.has(scene)) return;
+
+      const add = (cls, parent=scene) => {
+
+        const el = document.createElement('div');
+
+        el.className = cls;
+
+        parent.appendChild(el);
+
+        return el;
+
+      };
+
+      const rand = (a,b)=> a + Math.random()*(b-a);
+
+      if (scene.classList.contains('s1')){
+
+        for(let i=0;i<22;i++){
+
+          const p = add('petal');
+
+          p.style.left = rand(5,95)+'vw';
+
+          p.style.animationDelay = rand(0,6)+'s';
+
+          p.style.setProperty('--fall', rand(8,14)+'s');
+
+        }
+
+      }
+
+      if (scene.classList.contains('s2')){
+
+        for(let i=0;i<28;i++){
+
+          const ember = add('ember');
+
+          ember.style.left = rand(8,92)+'%';
+
+          ember.style.animationDelay = rand(0,6)+'s';
+
+          ember.style.setProperty('--rise', rand(9,14)+'s');
+
+          ember.style.setProperty('--scale', rand(0.6,1.3).toFixed(2));
+
+          ember.style.setProperty('--drift', rand(-9,9)+'vw');
+
+        }
+
+      }
+
+      if (scene.classList.contains('s3')){
+
+        for(let i=0;i<18;i++){
+
+          const lumen = add('lumen');
+
+          lumen.style.left = rand(32,68)+'%';
+
+          lumen.style.bottom = rand(14,26)+'%';
+
+          lumen.style.animationDelay = rand(0,8)+'s';
+
+          lumen.style.setProperty('--duration', rand(8,12)+'s');
+
+          lumen.style.setProperty('--scale', rand(0.7,1.2).toFixed(2));
+
+          lumen.style.setProperty('--arc', rand(-8,8)+'vw');
+
+        }
+
+      }
+
+      if (scene.classList.contains('s4')){
+
+        for(let i=0;i<42;i++){
+
+          const grain = add('sand-grain');
+
+          grain.style.left = rand(4,96)+'%';
+
+          grain.style.bottom = rand(-6,18)+'%';
+
+          grain.style.animationDelay = rand(0,5)+'s';
+
+          grain.style.setProperty('--duration', rand(7,12)+'s');
+
+          grain.style.setProperty('--scale', rand(0.5,1).toFixed(2));
+
+          grain.style.setProperty('--shiftX', rand(14,28)+'vw');
+
+        }
+
+      }
+
+      if (scene.classList.contains('s5')){
+
+        for(let i=0;i<24;i++){
+
+          const leaf = add('leaf');
+
+          leaf.style.left = rand(5,95)+'vw';
+
+          leaf.style.animationDelay = rand(0,8)+'s';
+
+          leaf.style.animationDuration = rand(8,14)+'s';
+
+        }
+
+      }
+
+      if (scene.classList.contains('s6')){
+
+        const rain = add('rain');
+
+        for(let i=0;i<110;i++){
+
+          const drop = add('drop', rain);
+
+          drop.style.left = rand(0,100)+'vw';
+
+          drop.style.animationDelay = rand(0,1.2)+'s';
+
+          drop.style.height = rand(8,16)+'vh';
+
+        }
+
+      }
+
+      if (scene.classList.contains('s7')){
+
+        for(let i=0;i<26;i++){
+
+          const glimmer = add('glimmer');
+
+          glimmer.style.left = rand(12,88)+'%';
+
+          glimmer.style.bottom = rand(10,26)+'%';
+
+          glimmer.style.animationDelay = rand(0,6)+'s';
+
+          glimmer.style.setProperty('--duration', rand(9,14)+'s');
+
+          glimmer.style.setProperty('--scale', rand(0.7,1.4).toFixed(2));
+
+          glimmer.style.setProperty('--sway', rand(-9,9)+'vw');
+
+        }
+
+      }
+
+      if (scene.classList.contains('s8')){
+
+        const palettes = [
+
+          'linear-gradient(180deg, rgba(255,240,170,.95), rgba(255,95,125,.85))',
+
+          'linear-gradient(180deg, rgba(155,214,255,.95), rgba(91,147,255,.85))',
+
+          'linear-gradient(180deg, rgba(255,219,146,.95), rgba(255,139,64,.85))'
+
+        ];
+
+        for(let i=0;i<34;i++){
+
+          const confetti = add('confetti');
+
+          confetti.style.left = rand(5,95)+'%';
+
+          confetti.style.animationDelay = rand(0,4)+'s';
+
+          confetti.style.setProperty('--duration', rand(5.5,7.5)+'s');
+
+          confetti.style.setProperty('--driftX', rand(-14,14)+'vw');
+
+          confetti.style.setProperty('--tilt', rand(-25,25)+'deg');
+
+          confetti.style.background = palettes[Math.floor(Math.random()*palettes.length)];
+
+        }
+
+      }
+
+      if (scene.classList.contains('s9')){
+
+        const fw = add('fireworks');
+
+        for(let i=0;i<14;i++){
+
+          const burst = add('burst', fw);
+
+          burst.style.left = rand(10,90)+'%';
+
+          burst.style.top = rand(15,55)+'%';
+
+          burst.style.animationDelay = rand(0,2)+'s';
+
+        }
+
+      }
+
+      fxCache.add(scene);
+
+    }
+
+    // Removed rain and fireworks systems
+
+    let idx = -1;
+
+    function setActive(i, opts={}) {
+
+      scenes.forEach((s, j) => s.classList.toggle('active', j === i));
+
+      Array.from(progress.children).forEach((d, j) => d.classList.toggle('active', j <= i));
+
+      // No avatars or environment interactions
+
+      requestAnimationFrame(() => {
+
+        plane.classList.remove('fly');
+
+        void plane.offsetWidth; // restart animation
+
+        plane.classList.add('fly');
+
+      });
+
+      // Populate scene-specific effects once
+
+      populateSceneEffects(scenes[i]);
+
+      // No walk-between-scenes; figures stay anchored per scene
+
+    }
+
+    function next() { idx = Math.min(idx + 1, scenes.length - 1); setActive(idx, {dir:'forward'}); updateNavState(); }
+
+    function prev() { idx = Math.max(idx - 1, 0); setActive(idx, {dir:'back'}); updateNavState(); }
+
+    function updateNavState(){
+
+      const prevBtn = document.getElementById('prevBtn');
+
+      const nextBtn = document.getElementById('nextBtn');
+
+      if (!prevBtn || !nextBtn) return;
+
+      prevBtn.disabled = (idx <= 0);
+
+      nextBtn.disabled = (idx >= scenes.length - 1);
+
+    }
+
+    // Removed couple engine and anchor tracking
+
+    // Removed legacy walk/look system – replaced by applyScene()
+
+    // Intro start
+
+    const intro = document.getElementById('intro');
+
+    const startBtn = document.getElementById('startBtn');
+
+    const nextBtn = document.getElementById('nextBtn');
+
+    const prevBtn = document.getElementById('prevBtn');
+
+    startBtn.addEventListener('click', () => {
+
+      intro.style.display = 'none';
+
+      idx = 0; setActive(idx, {dir:'forward'}); updateNavState();
+
+    });
+
+    // Buttons
+
+    nextBtn.addEventListener('click', () => { if(idx === -1) return; if(idx < scenes.length - 1) next(); });
+
+    prevBtn.addEventListener('click', () => { if(idx === -1) return; if(idx > 0) prev(); });
+
+    // Keyboard
+
+    window.addEventListener('keydown', (e)=>{
+
+      if (intro && intro.style.display !== 'none') return;
+
+      if (e.key === 'ArrowRight') nextBtn.click();
+
+      if (e.key === 'ArrowLeft') prevBtn.click();
+
+    });
+
+    // Progress click
+
+    progress.addEventListener('click', (e)=>{
+
+      const dot = e.target.closest('.dot');
+
+      if (!dot) return;
+
+      const dots = Array.from(progress.children);
+
+      const i = dots.indexOf(dot);
+
+      if (i >= 0) { idx = i; setActive(idx, {dir:'forward'}); updateNavState(); }
+
+    });
+
+    // Swipe support
+
+    let touchX=null, touchY=null; 
+
+    window.addEventListener('touchstart', (e)=>{ const t=e.changedTouches[0]; touchX=t.clientX; touchY=t.clientY; }, {passive:true});
+
+    window.addEventListener('touchend', (e)=>{ if(touchX===null) return; const t=e.changedTouches[0]; const dx=t.clientX-touchX; const dy=Math.abs(t.clientY-touchY); if(Math.abs(dx)>30 && dy<80){ if(dx<0) nextBtn.click(); else prevBtn.click(); } touchX=touchY=null; }, {passive:true});
+
+    // Reduce motion
+
+    const mq = window.matchMedia('(prefers-reduced-motion: reduce)');
+
+    if (mq.matches) { document.querySelectorAll('*').forEach(el => el.style.animationDuration = '0s'); }
+
+  })();
+
+</script>
+
+</body>
+
+</html>
 
